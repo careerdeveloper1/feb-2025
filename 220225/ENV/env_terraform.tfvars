@@ -1,6 +1,6 @@
 varenvrg = {
   rg01 = {
-    name     = "rgd01"
+    name     = "kriti-rg"
     location = "westus"
   }
 
