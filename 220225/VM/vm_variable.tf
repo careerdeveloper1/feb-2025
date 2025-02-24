@@ -1,7 +1,0 @@
-variable "varvm" {
-  
-}
-
-variable "vardatanic" {
-  
-}
