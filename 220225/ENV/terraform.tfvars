@@ -1,12 +1,12 @@
 # Resource Groups
 varenvrg = {
   rg01 = {
-    rg-name    = "master"
-    rg-location = "east us"
+    name    = "master"
+    location = "east us"
   }
   rg02 = {
-    rg-name    = "worker"
-    rg-location = "central us"
+    name    = "worker"
+    location = "central us"
   }
 
 }
