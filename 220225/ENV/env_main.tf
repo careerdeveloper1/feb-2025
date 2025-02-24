@@ -10,27 +10,27 @@ variable "varenvnsgni" {}
 
 
 module "rg-mod" {
-  source = "../RG"
+  source = "source = git::https://github.com/careerdeveloper1/code.git//RG"
   varrg = var.varenvrg
   
 }
 
 module "vn-mod" {
-  source = "../VN"
+  source = "source = git::https://github.com/careerdeveloper1/code.git//VN"
   varvn = var.varenvvn
   depends_on = [ module.rg-mod ]
   
 }
 
 module "sn-mod" {
-  source = "../SN"
+  source = "source = git::https://github.com/careerdeveloper1/code.git//SN"
   varsn = var.varenvsn
   depends_on = [ module.vn-mod ]
   
 }
 
 module "pi-mod" {
-  source = "../PI"
+  source = "source = git::https://github.com/careerdeveloper1/code.git//PI"
   varpi = var.varenvpi
   depends_on = [ module.rg-mod ]
   
@@ -39,7 +39,7 @@ module "pi-mod" {
 
 module "ni-mod" {
   depends_on = [ module.pi-mod, module.sn-mod, module.vn-mod ]
-  source = "../NI"
+  source = "source = git::https://github.com/careerdeveloper1/code.git//NI"
   varni = var.varenvni
   vardatapi = var.varenvpi
   vardatasi = var.varenvsn
@@ -49,7 +49,7 @@ module "ni-mod" {
 
 module "vm-mod" {
   depends_on = [ module.ni-mod, module.sn-mod ]
-  source = "../VM"
+  source = "source = git::https://github.com/careerdeveloper1/code.git//VM"
   varvm= var.varenvvm
   vardatanic= var.varenvni
   # varkv = var.varenvkv
@@ -58,13 +58,13 @@ module "vm-mod" {
 
 module "nsg-mod" {
   depends_on = [ module.rg-mod ]
-  source = "../NSG"
+  source = "source = git::https://github.com/careerdeveloper1/code.git//NSG"
   varnsg = var.varenvnsg
 }
 
 module "nsgni-mod" {
   depends_on = [ module.nsg-mod, module.ni-mod ]
-  source = "../NSGNI"
+  source = "source = git::https://github.com/careerdeveloper1/code.git//NSGNI"
   varnsgni = var.varenvnsgni
   
 }
